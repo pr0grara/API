@@ -9,3 +9,5 @@ router.get('/:file/:type', (req, res) => {
     res.set({'Content-Type': `audio/${type}`});
     res.status(200).sendFile(path.resolve(__dirname, '../', 'assets', 'audio', `${fileName}.${type}`)).end();
 });
+
+module.exports = router;
