@@ -13,7 +13,7 @@ router.get('/src/:file-:type', (req, res) => {
     
     if (type === 'svg') type = type + "+xlm";
     res.set({ 'Content-Type': `image/${type}` });
-    res.status(200).sendFile(filePath)
+    res.status(200).sendFile(filePath);
 });
 
 module.exports = router;
