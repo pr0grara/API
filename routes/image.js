@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 router.get('/src/:file-:type', (req, res) => {
     let fileName = req.params.file;
     let type = req.params.type || "png";
+    if (type === 'svg') type = type + "+xlm";
     let filePath = path.resolve(__dirname, "../", "assets", "image", `${fileName}.${type}`);
 
     res.set({'Content-Type': `image/${type}`});
